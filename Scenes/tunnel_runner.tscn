@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://biolrjlad4yt6"]
+
+[ext_resource type="Script" uid="uid://c4vfhvabrxsq" path="res://Scenes/player.gd" id="1_v248k"]
+[ext_resource type="Script" uid="uid://4axt82ipp70t" path="res://Scripts/tunnel.gd" id="2_bpoi6"]
+[ext_resource type="FontFile" uid="uid://b0tycuvbse4nm" path="res://Assets/DiplomataSC-Regular.ttf" id="3_2duhx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8hv0o"]
+
+[node name="Node3D" type="Node3D" unique_id=1335270504]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1607653773]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+
+[node name="Player" type="Node3D" parent="." unique_id=1576284677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -8)
+script = ExtResource("1_v248k")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="Player" unique_id=257618749]
+mesh = SubResource("CapsuleMesh_8hv0o")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=620044378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+current = true
+
+[node name="TunnelPivot" type="Node3D" parent="." unique_id=633780906]
+unique_name_in_owner = true
+script = ExtResource("2_bpoi6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1458073464]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1042366309]
+unique_name_in_owner = true
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+
+[node name="MainMenu" type="CanvasLayer" parent="." unique_id=1698972807]
+unique_name_in_owner = true
+
+[node name="Background" type="ColorRect" parent="MainMenu" unique_id=1816277594]
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="TitleLabel" type="Label" parent="MainMenu" unique_id=91734842]
+unique_name_in_owner = true
+offset_top = 350.0
+offset_right = 720.0
+offset_bottom = 550.0
+theme_override_fonts/font = ExtResource("3_2duhx")
+theme_override_font_sizes/font_size = 100
+text = "Tunnel
+Vision"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MainMenu" unique_id=721071940]
+unique_name_in_owner = true
+offset_left = 250.0
+offset_top = 600.0
+offset_right = 520.0
+offset_bottom = 680.0
+theme_override_colors/font_color = Color(0.9843137, 0.007843138, 0.003921569, 1)
+theme_override_colors/font_pressed_color = Color(0.011764706, 0.9843137, 0.654902, 1)
+theme_override_colors/font_hover_color = Color(0, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("3_2duhx")
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="RoundScoreLabel" type="Label" parent="MainMenu" unique_id=1379771533]
+unique_name_in_owner = true
+offset_top = 690.0
+offset_right = 765.0
+offset_bottom = 740.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_2duhx")
+theme_override_font_sizes/font_size = 40
+text = "Round Score Label"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="MainMenu" unique_id=564564645]
+unique_name_in_owner = true
+offset_left = 20.0
+offset_top = 760.0
+offset_right = 740.0
+offset_bottom = 810.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_2duhx")
+theme_override_font_sizes/font_size = 40
+text = "High Score"
+horizontal_alignment = 1
+
+[node name="CreditsLabel" type="Label" parent="MainMenu" unique_id=1320323292]
+offset_top = 1200.0
+offset_right = 720.0
+offset_bottom = 1250.0
+theme_override_fonts/font = ExtResource("3_2duhx")
+theme_override_font_sizes/font_size = 25
+text = "Created by Naveen Nair"
+horizontal_alignment = 1
