@@ -14,7 +14,7 @@ Tunnel Vision is a fast-paced endless runner where you [dodge obstacles / steer 
 - Smooth performance on mobile
 
 ## Controls
-- [Swipe left/right to steer]
+- [Left/Right arrow to steer]
 
 ## Built With
 - Godot 4
